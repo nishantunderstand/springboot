@@ -6,10 +6,10 @@ import org.springframework.context.ApplicationContext;
 
 
 @SpringBootApplication
-public class BootexampleApplication {
+public class BootExampleApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context= SpringApplication.run(BootexampleApplication.class, args);
+		ApplicationContext context= SpringApplication.run(BootExampleApplication.class, args);
 		//UserRepository userRepository= context.getBean(UserRepository.class);
 		
 		/*
