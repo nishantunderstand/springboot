@@ -1,4 +1,4 @@
-package com.jpa.test.entities;
+package com.spring.boot.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

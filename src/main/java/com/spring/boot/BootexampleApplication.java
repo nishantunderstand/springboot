@@ -1,4 +1,4 @@
-package com.jpa.test;
+package com.spring.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.context.ApplicationContext;
 
 
 @SpringBootApplication
-public class BootjpaexampleApplication {
+public class BootexampleApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context= SpringApplication.run(BootjpaexampleApplication.class, args);
+		ApplicationContext context= SpringApplication.run(BootexampleApplication.class, args);
 		//UserRepository userRepository= context.getBean(UserRepository.class);
 		
 		/*

@@ -39,3 +39,11 @@ ping => PONG
 info-
 
 wsl stand for : Windows Subsystem for Linux.
+
+
+---
+
+SpringBoot Default serializer.
+Redis Default serializer.
+Both are different.
+That's why we are facing issue.

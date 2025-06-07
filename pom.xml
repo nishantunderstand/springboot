@@ -10,8 +10,8 @@
 		<relativePath />
 	</parent>
 
-	<groupId>com.jpa.test</groupId>
-	<artifactId>springbootjpa</artifactId>
+	<groupId>com.spring.boot</groupId>
+	<artifactId>springboot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot</name>
 	<description>Learn Spring Boot</description>

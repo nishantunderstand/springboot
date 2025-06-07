@@ -1,8 +1,8 @@
-package com.jpa.test.dao;
+package com.spring.boot.dao;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.jpa.test.entities.User;
+import com.spring.boot.entities.User;
 
 public interface UserRepository  extends CrudRepository <User, Integer>{
 	
