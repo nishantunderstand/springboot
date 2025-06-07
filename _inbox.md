@@ -24,3 +24,12 @@
 	Test 
 	Provided 
 	Runtime 
+	
+	
+---
+
+How to set / get data From Redis ?
+127.0.0.1:6379>
+
+set salary 10k
+get salary 
