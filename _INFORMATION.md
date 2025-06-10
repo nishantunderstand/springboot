@@ -40,10 +40,26 @@ info-
 
 wsl stand for : Windows Subsystem for Linux.
 
-
 ---
 
 SpringBoot Default serializer.
 Redis Default serializer.
 Both are different.
 That's why we are facing issue.
+
+
+---
+🔥 Flush Redis
+redis-cli FLUSHALL
+
+
+Or You can use 
+```java
+@Autowired
+private RedisTemplate<String, Object> redisTemplate;
+
+@PostConstruct
+public void clearRedis() {
+    redisTemplate.getConnectionFactory().getConnection().flushAll();
+}
+```
