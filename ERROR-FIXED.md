@@ -16,3 +16,13 @@ So Please keep this in mind.
 
 # Lombok is Enabeled, I am still getting Error 
 https://projectlombok.org/
+
+
+
+netstat -ano | findstr :8080
+taskkill /PID 6232 /F
+
+
+
+# Static Resource Handling vs Controller Mapping
+- Sometime When we return they get confused

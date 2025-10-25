@@ -1,4 +1,10 @@
 spring:
-  redis:
-    host: localhost
-    port: 6379
+  mvc:
+    static-path-pattern: /resources/**
+  web:
+    resources:
+      add-mappings: false
+
+server:
+  servlet:
+    context-path: /springboot1

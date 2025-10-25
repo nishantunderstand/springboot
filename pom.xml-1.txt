@@ -5,11 +5,10 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Parent Spring Boot BOM -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.4</version>
+        <version>2.6.4</version>
         <relativePath/>
     </parent>
 
@@ -17,16 +16,18 @@
     <artifactId>springboot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot</name>
-    <description>Learn Spring Boot with Java 21</description>
+    <description>Learn Spring Boot</description>
 
     <properties>
-        <java.version>21</java.version>
-        <!-- Remove all individual dependency versions - Spring Boot BOM manages them -->
-        <!-- Plugin versions are also managed by Spring Boot parent -->
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
-        <!-- Core Spring Boot Starters -->
+
+        <!-- ======================= -->
+        <!-- ✅ Core Spring Boot Starters -->
+        <!-- ======================= -->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -52,16 +53,20 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!-- Optional: HATEOAS -->
+        <!-- Optional: only if building hypermedia APIs -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-hateoas</artifactId>
         </dependency>
 
-        <!-- Database Drivers - No versions needed, Spring Boot BOM manages them -->
+
+        <!-- ======================= -->
+        <!-- ✅ Database Drivers -->
+        <!-- ======================= -->
+
         <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
 
@@ -71,7 +76,26 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- DevTools for Hot Reload -->
+
+        <!-- ======================= -->
+        <!-- ✅ JSON Handling -->
+        <!-- ======================= -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+
+        <!-- ======================= -->
+        <!-- ✅ Development Tools -->
+        <!-- ======================= -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.38</version>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -79,46 +103,61 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Lombok - No version needed, Spring Boot BOM manages it -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
 
-        <!-- Testing -->
+        <!-- ======================= -->
+        <!-- ✅ Testing -->
+        <!-- ======================= -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+
+        <!-- ======================= -->
+        <!-- ⚙️ Optional / Remove If Not Needed -->
+        <!-- ======================= -->
+
+        <!-- Only needed if you expose Spring Data REST repositories directly -->
+        <!--
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-rest-hal-explorer</artifactId>
+        </dependency>
+        -->
+
+        <!-- Only needed if using JAXB (XML schema bindings) -->
+        <!--
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-xjc</artifactId>
+        </dependency>
+        -->
+
+        <!-- Only needed if using @PostConstruct / @Resource in Java 11+ -->
+        <!--
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+        </dependency>
+        -->
+
+        <!-- Local project module (include only if exists) -->
+        <!--
+        <dependency>
+            <groupId>com.spring.mvc</groupId>
+            <artifactId>springmvc</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        -->
+
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Spring Boot Maven Plugin - No version needed -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-
-            <!-- Compiler Plugin for Java 21 - No version needed, managed by Spring Boot -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <release>${java.version}</release>
-                </configuration>
             </plugin>
         </plugins>
     </build>
