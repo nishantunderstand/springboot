@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
-
 @RestController
 @RequestMapping("/v3")
 public class HomeControllerWithEntity {
@@ -17,6 +15,12 @@ public class HomeControllerWithEntity {
     return ResponseEntity.ok()
       .contentType(MediaType.TEXT_PLAIN)
       .body("44");
+  }
+
+  @GetMapping("/test3")
+  public ResponseEntity<String> test2(){
+    return ResponseEntity.ok()
+      .body("441");
   }
 }
 
